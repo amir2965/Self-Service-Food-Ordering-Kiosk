@@ -1,8 +1,5 @@
 
-markdown
-Copy
-Edit
-# 🚀 Project Name
+# 🚀 Self-Service-Food-Ordering-Kiosk
 
 Welcome to the my repository!  Follow the instructions below to set up and run the project locally.
 
@@ -24,8 +21,8 @@ Welcome to the my repository!  Follow the instructions below to set up and run t
 Start by cloning this repository to your local machine.
 
 
-git clone https://github.com/your-username/your-repository-name.git
-cd your-repository-name
+git clone https://github.com/amir2965/Self-Service-Food-Ordering-Kiosk.git
+cd Self-Service-Food-Ordering-Kiosk
 2️⃣ Install Dependencies
 Install the required dependencies using npm or yarn.
 
