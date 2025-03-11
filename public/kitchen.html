@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Display System</title>
+    <link rel="stylesheet" href="kitchens.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="kitchen-container">
+        <header>
+            <div class="header-left">
+                <h1>Kitchen Orders</h1>
+                <div class="order-count">Active Orders: <span id="activeOrderCount">0</span></div>
+            </div>
+            <div class="controls">
+                <select id="statusFilter">
+                    <option value="all">All Orders</option>
+                    <option value="new">New Orders</option>
+                    <option value="preparing">Preparing</option>
+                    <option value="ready">Ready</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <button id="soundToggle" class="sound-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button id="clearCache" class="clear-btn" title="Clear cached status">
+                    <i class="fas fa-broom"></i>
+                </button>
+                <button id="resetOrderNumber" class="reset-btn" title="Reset Order Numbers">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button id="clearAllOrders" class="clear-orders-btn" title="Clear All Orders">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="status-menu-container">
+            <div class="status-tabs">
+                <div class="status-tab active" data-status="all">
+                    <div class="status-label">All Orders</div>
+                    <div class="status-count" id="count-all">0</div>
+                </div>
+                <div class="status-tab" data-status="new">
+                    <div class="status-label">New Orders</div>
+                    <div class="status-count" id="count-new">0</div>
+                </div>
+                <div class="status-tab" data-status="preparing">
+                    <div class="status-label">Preparing</div>
+                    <div class="status-count" id="count-preparing">0</div>
+                </div>
+                <div class="status-tab" data-status="ready">
+                    <div class="status-label">Ready</div>
+                    <div class="status-count" id="count-ready">0</div>
+                </div>
+                <div class="status-tab" data-status="completed">
+                    <div class="status-label">Completed</div>
+                    <div class="status-count" id="count-completed">0</div>
+                </div>
+            </div>
+        </div>
+
+        <main id="ordersGrid">
+            <!-- Orders will be dynamically inserted here -->
+        </main>
+    </div>
+
+    <audio id="newOrderSound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"></audio>
+    <script src="kitchen.js"></script>
+
+    <template id="orderTemplate">
+        <div class="order-card">
+            <div class="order-header">
+                <div class="order-info">
+                    <h2 class="order-number"></h2>
+                    <span class="order-type-badge"></span>
+                    <span class="order-time"></span>
+                </div>
+                <div class="status-badge"></div>
+            </div>
+
+            <div class="order-items">
+                <div class="item">
+                    <div class="item-main">
+                        <div class="item-header">
+                            <h3 class="item-name"></h3>
+                            <span class="item-quantity"></span>
+                        </div>
+                        <div class="item-price"></div>
+                    </div>
+
+                    <div class="options-grid">
+                        <div class="option-group size-options">
+                            <h4>Size</h4>
+                            <div class="option-content"></div>
+                        </div>
+                        
+                        <div class="option-group sauce-options">
+                            <h4>Sauces</h4>
+                            <div class="option-content"></div>
+                        </div>
+
+                        <div class="option-group extra-options">
+                            <h4>Extras</h4>
+                            <div class="option-content"></div>
+                        </div>
+
+                        <div class="option-group salad-options">
+                            <h4>Salads</h4>
+                            <div class="option-content"></div>
+                        </div>
+                    </div>
+
+                    <div class="special-instructions">
+                        <h4>Special Instructions</h4>
+                        <p class="instructions-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-actions">
+                <!-- ...existing buttons... -->
+            </div>
+        </div>
+    </template>
+</body>
+</html>

@@ -1,0 +1,4049 @@
+/* ...existing code... */
+
+.profile-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-profile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 200px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.user-profile-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-toggle-btn {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: background 0.2s;
+    margin-left: auto;
+    padding-top: 5px;
+}
+
+.profile-toggle-btn:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.profile-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+}
+
+.profile-menu-item i {
+    width: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.profile-menu-item:hover {
+    background: #f5f5f5;
+}
+
+.profile-menu-item.danger {
+    color: #dc3545;
+}
+
+.profile-menu-item.danger i {
+    color: #dc3545;
+}
+
+.profile-menu-item.danger:hover {
+    background: #fff5f5;
+}
+
+.quick-orders-btn {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 2px solid #ffcc00;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quick-orders-btn:hover {
+    background: #ffcc00;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
+}
+
+.quick-orders-btn i {
+    font-size: 16px;
+    color: #ffcc00;
+}
+
+.quick-orders-btn:hover i {
+    color: #333;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for Mega Meal items */
+.customization-content[data-category="Mega Meal"] .quantity-buttona {
+    margin: 987.9px 141px;
+}
+
+.customization-content[data-category="Mega Meal"] .quantity-buttond {
+    margin: 987.9px 437px;
+}
+
+
+
+.customization-content[data-item-type="megameal"] .quantity-buttona {
+    margin: 988px 141px;
+}
+
+.customization-content[data-item-type="megameal"] .quantity-buttond {
+    margin: 988px 437px;
+}
+
+.customization-content[data-item-type="megameal"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -84px;
+}
+
+.customization-content[data-item-type="megameal"] div {
+    margin-bottom: -26px;
+}
+
+/* Add specific styles for Snack Pack items */
+.customization-content[data-category="Snack Pack"] .quantity-buttona {
+    margin: 987px 141px;
+}
+
+.customization-content[data-category="Snack Pack"] .quantity-buttond {
+    margin: 987px 437px;
+}
+
+.customization-content[data-item-type="snackpack"] .quantity-buttona {
+    margin: 988px 141px;
+}
+
+.customization-content[data-item-type="snackpack"] .quantity-buttond {
+    margin: 988px 437px;
+}
+
+.customization-content[data-item-type="snackpack"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -84px;
+}
+
+.customization-content[data-item-type="snackpack"] div {
+    margin-bottom: -26px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for chocolate */
+
+/* ...existing code... */
+
+#chips-sauce-section h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#chips-sauce-section .options-grid {
+    gap: 12px;
+}
+
+#chips-sauce-section .option-box {
+    background: #fff9e6;
+}
+
+#chips-sauce-section .option-box:hover {
+    background: #fff3d6;
+}
+
+/* ...existing code... */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    touch-action: pan-y; /* Allow only vertical scrolling */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #ffcc00 #f0f0f0;
+    padding-right: 12px; /* Increase padding to prevent content touching scrollbar */
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #ffcc00;
+    border-radius: 4px;
+    border: 2px solid #f0f0f0;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #e6b800;
+}
+
+.buttoni {
+    display: none; /* Always start hidden */
+    margin-top: 20px;
+    padding: 15px 20px;
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative; /* Changed from fixed to relative */
+    left: 0; /* Reset left position */
+    bottom: 0; /* Reset bottom position */
+    margin-top: 20px; /* Add margin to separate from frequent foods */
+}
+
+.buttoni:hover {
+    background-color: #e6b800;
+}
+
+.sidebar h2 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: #1a1a1a;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffcc00;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.sidebar-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.sidebar-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #ffcc00;
+}
+
+.sidebar-item img {
+    width: clamp(60px, 8vw, 80px);
+    height: clamp(60px, 8vw, 80px);
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.sidebar-item-title {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.sidebar-item-description {
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.sidebar-item-price {
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+    font-weight: 600;
+    color: #ff0000;
+    margin-top: 5px;
+}
+
+.sidebar-item-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffcc00;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.sidebar-item:hover .sidebar-item-badge {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main-content {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto; /* Allow scrolling */
+    scrollbar-width: thin;
+    scrollbar-color: #ffcc00 #f0f0f0;
+    padding-right: 12px; /* Increase padding to prevent content touching scrollbar */
+}
+
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background: #ffcc00;
+    border-radius: 4px;
+    border: 2px solid #f0f0f0;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: #e6b800;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-right: 4px; /* Add small margin to prevent items touching scrollbar */
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s; /* Smooth scaling effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-item:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-item-text {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000; /* Black color for food titles */
+    margin-bottom: 5px;
+}
+
+.menu-item-price {
+    font-size: 18px; /* Increase the font size */
+    color: #ff0000; /* Red color for prices */
+}
+
+.customization-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInScale 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.customization-window.closing {
+    animation: fadeOutScale 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes fadeOutScale {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.customization-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    width: 90%;
+    max-width: 600px; /* Increase the width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    padding-bottom: 121px;
+}
+
+.customization-content button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    border: 1px solid #adadad; /* Add black stroke */
+}
+
+.customization-content img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -84px;
+}
+
+/* Add specific styles for drinks category */
+.customization-content[data-category="Drinks"] img {
+    margin-bottom: -6px;
+}
+
+.customization-content[data-item-type="milkshake"] img {
+    margin-bottom: -11px;
+}
+
+.customization-content[data-item-type="drink"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+/* Add specific styles for slushies */
+.customization-content[data-item-type="slushie"] img {
+    margin-bottom: -11px;
+}
+
+/* Add specific styles for ice cream */
+.customization-content[data-item-type="icecream"] img {
+    margin-bottom: -11px;
+}
+
+/* Add specific styles for coffee */
+.customization-content[data-item-type="coffee"] img {
+    margin-bottom: -11px;
+}
+
+.customization-content h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #333;
+}
+
+/* Add specific styles for drinks category */
+.customization-content[data-category="Drinks"] h2 {
+    margin-bottom: -22px;
+}
+
+.customization-content label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+
+.customization-content input[type="number"],
+.customization-content select {
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: -29px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.size-regular {
+    /* Add any specific styles for the regular size option if needed */
+}
+
+.size-large {
+    /* Add any specific styles for the large size option if needed */
+}
+
+.size-jumbo {
+    /* Add any specific styles for the jumbo size option if needed */
+}
+
+.customization-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.customization-content div {
+    width: 100%;
+    text-align: center;
+    margin-bottom: -26px;
+}
+
+/* Add specific styles for drinks category */
+.customization-content[data-category="Drinks"] div {
+    margin-bottom: -5px;
+}
+
+.customization-content p {
+    font-size: 22px; /* Increase the font size */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ff0000; /* Red color for total price */
+    text-align: center; /* Center align the total price */
+    padding: 10px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    background-color: #fff; /* Add background color */
+    margin-bottom: 0px;
+    margin-top: 43px;
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.quantity-buttona {
+     background-color: #ffcc00;
+     color: #333;
+     border: none;
+     border-radius: 5px;
+     padding: 6.2px 20px;
+     font-size: 18px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+     margin: 996px 141px;
+}
+
+/* Add specific styles for drinks category */
+.customization-content[data-category="Drinks"] .quantity-buttona {
+    margin: 733px 141px;
+}
+
+.quantity-buttond {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 6.2px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 996px 437px;
+}
+
+/* Add specific styles for drinks category */
+.customization-content[data-category="Drinks"] .quantity-buttond {
+    margin: 733px 437px;
+}
+
+.customization-content[data-item-type="milkshake"] .quantity-buttona {
+    margin: 632px 141px;
+}
+
+.customization-content[data-item-type="coffee"] .quantity-buttond {
+    margin: 525px 437px;
+}
+
+.customization-content[data-item-type="milkshake"] .quantity-buttond {
+    margin: 632px 437px;
+}
+
+.customization-content[data-item-type="slushie"] .quantity-buttona {
+    margin: 525px 141px;
+}
+
+.customization-content[data-item-type="slushie"] .quantity-buttond {
+    margin: 524px 437px;
+}
+
+.customization-content[data-item-type="icecream"] .quantity-buttond {
+    margin: 525px 437px;
+}
+
+.customization-content[data-item-type="icecream"] .quantity-buttona {
+    margin: 525px 141px;
+} 
+
+.customization-content[data-item-type="chocolate"] .quantity-buttond {
+    margin: 451px 437px;
+}
+
+.customization-content[data-item-type="chocolate"] .quantity-buttona {
+    margin: 451px 141px;
+} 
+
+.customization-content[data-item-type="coffee"] .quantity-buttond {
+    margin: 525px 437px;
+}
+
+.customization-content[data-item-type="coffee"] .quantity-buttona {
+    margin: 524px 141px;
+} 
+
+.customization-content[data-category="Drinks"][data-item-type="coke150"] .quantity-buttond {
+    margin: 733px 437px;
+}
+
+.customization-content[data-category="Drinks"][data-item-type="coke150"] .quantity-buttona {
+    margin: 733px 141px;
+}
+
+.customization-content[data-item-type="shish"] .quantity-buttona {
+    margin: 761px 141px;
+}
+
+.customization-content[data-item-type="shish"] .quantity-buttond {
+    margin: 760px 437px;
+}
+
+.customization-content[data-item-type="shish"] img {
+    margin-bottom: -19px;
+}
+
+.customization-content[data-category="Vegetarian"] img {
+    margin-bottom: -64px;
+}
+
+.customization-content[data-category="Vegetarian"] .quantity-buttona {
+    margin: 1007px 141px;
+}
+
+.customization-content[data-category="Vegetarian"] .quantity-buttond {
+    margin: 1007px 437px;
+}
+
+.customization-content[data-category="Kebabs"] .quantity-buttona {
+    margin: 987px 141px;
+}
+
+.customization-content[data-category="Kebabs"] .quantity-buttond {
+    margin: 987px 437px;
+}
+
+.customization-content[data-category="Chips and Nuggets"] img {
+    margin-bottom: -21px;
+}
+
+
+.customization-content[data-category="Chips and Nuggets"] .quantity-buttona {
+    margin: 759px 141px;
+}
+
+.customization-content[data-category="Chips and Nuggets"] .quantity-buttond {
+    margin: 759px 437px;
+}
+
+
+
+quantity-buttond:hover,
+.quantity-buttona:hover {
+    background-color: #e6b800;
+}
+
+.customization-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 21px;
+    padding: 66px 0px 0px;
+    position: absolute;
+    bottom: 33px;
+    left: 20px;
+    right: 20px;
+}
+
+.customization-buttons .cancel-button {
+
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    margin-right: 10px;
+    flex: 1;
+    text-align: center;
+    padding: 13px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    right: 426px;
+}
+
+.customization-buttons .cancel-button:hover {
+    background-color: #f5f5f5;
+}
+
+.customization-buttons .add-button {
+    
+    background-color: #ffcc00;
+    color: #333;
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    right: 174px;
+    padding-left: 54px;
+    margin-right: 2px;
+    padding-right: 54px;
+}
+
+.customization-buttons .add-button:hover {
+    background-color: #e6b800;
+}
+
+.hidden {
+    display: none;
+}
+
+#cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    padding: 5px 8px;
+}
+
+.order-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.order-section span {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.cart-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px; /* Increased max-width */
+    z-index: 1000;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    max-height: 80vh; /* Limit the height */
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #ffcc00 #f0f0f0; /* For Firefox */
+}
+
+.cart-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cart-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.cart-container::-webkit-scrollbar-thumb {
+    background: #ffcc00;
+    border-radius: 4px;
+    border: 2px solid #f0f0f0;
+}
+
+.cart-container::-webkit-scrollbar-thumb:hover {
+    background: #e6b800;
+}
+
+/* Add styles for cart header */
+.cart-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    z-index: 2;
+}
+
+.cart-container h2 {
+    margin-top: 0;
+    font-size: 24px; /* Increased font size */
+    text-align: center; /* Center align the heading */
+}
+
+.cart-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex: 1;
+    padding: 15px 0;
+}
+
+.cart-container li {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-container .cart-item-text {
+    font-size: 18px; /* Increased font size */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cart-container .cart-item-details {
+    font-size: 14px; /* Smaller font size for details */
+    color: #666; /* Gray color for details */
+    margin-bottom: 10px;
+}
+
+.cart-container .cart-item-sauces {
+    font-size: 14px; /* Smaller font size for sauces */
+    color: #007bff; /* Blue color for sauces */
+    margin-bottom: 5px;
+}
+
+.cart-container .cart-item-extras {
+    font-size: 14px; /* Smaller font size for extras */
+    color: #28a745; /* Green color for extras */
+    margin-bottom: 10px;
+}
+
+.cart-container .cart-item-fee {
+    font-size: 12px; /* Smaller font size for fees */
+    color: #ff0000; /* Red color for fees */
+    margin-left: 5px;
+}
+
+.cart-container .cart-item-actions {
+    display: flex;
+    justify-content: flex-end; /* Align actions to the right */
+    gap: 10px;
+}
+
+.cart-container .cart-item-actions i {
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.cart-container .cart-item-actions i:hover {
+    color: #ff0000; /* Red color on hover */
+}
+
+.cart-container button {
+    background: linear-gradient(145deg, #ffcc00, #ffb700);
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.cart-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.3);
+    background: linear-gradient(145deg, #ffb700, #ffcc00);
+}
+
+.cart-container button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(255, 204, 0, 0.2);
+}
+
+.cart-container button.close-cart {
+    background: linear-gradient(145deg, #e0e0e0, #d5d5d5);
+    color: #666;
+    margin-top: 10px;
+}
+
+.cart-container button.close-cart:hover {
+    background: linear-gradient(145deg, #d5d5d5, #e0e0e0);
+}
+
+/* Add icon styling */
+.cart-container button i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Add ripple effect */
+.cart-container button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.cart-container button:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.cart-container button:hover {
+    background-color: #e6b800;
+}
+
+.cart-total-price {
+    font-size: 24px; /* Increase the font size */
+    font-weight: bold;
+    color: #333; /* Dark color for total price */
+    text-align: center; /* Center align the total price */
+    margin-top: 20px; /* Add margin at the top */
+    padding: 10px; /* Add padding */
+    border-top: 2px solid #ffcc00; /* Add a top border */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Add styles for cart footer */
+.cart-footer {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    padding-top: 15px;
+    border-top: 2px solid #f0f0f0;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+.total-price-amount {
+    color: #ff0000; /* Red color for the amount */
+}
+
+/* ...existing code... */
+
+.selection-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    background-color: #fff;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-selection {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.auth-selection.show {
+    opacity: 1;
+}
+
+.selection-screen h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.selection-screen p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+
+.selection-button {
+    padding: 20px 40px;
+    font-size: 1.4em;
+    margin: 15px;
+    background: linear-gradient(145deg, #ffcc00, #ffb700);
+    color: #333;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    min-width: 250px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.selection-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.3);
+    background: linear-gradient(145deg, #ffb700, #ffcc00);
+}
+
+.selection-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(255, 204, 0, 0.2);
+}
+
+.selection-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.selection-button:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Special styling for member button */
+.selection-button[onclick*="Member"] {
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+}
+
+.selection-button[onclick*="Member"]:hover {
+    background: linear-gradient(145deg, #45a049, #4CAF50);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+/* Special styling for guest button */
+.selection-button[onclick*="Guest"] {
+    background: linear-gradient(145deg, #2196F3, #1e88e5);
+    color: white;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+}
+
+.selection-button[onclick*="Guest"]:hover {
+    background: linear-gradient(145deg, #1e88e5, #2196F3);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.3);
+}
+
+/* Styling for order type buttons */
+.selection-button[onclick*="Dine-In"] {
+    background: linear-gradient(145deg, #ff9800, #f57c00);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
+}
+
+.selection-button[onclick*="Dine-In"]:hover {
+    background: linear-gradient(145deg, #f57c00, #ff9800);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
+}
+
+.selection-button[onclick*="takeaway"] {
+    background: linear-gradient(145deg, #9c27b0, #8e24aa);
+    color: white;
+    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.2);
+}
+
+.selection-button[onclick*="takeaway"]:hover {
+    background: linear-gradient(145deg, #8e24aa, #9c27b0);
+    box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
+}
+
+/* Add icons to buttons */
+.selection-button i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* ...existing code... */
+
+.selection-button.back-button {
+    background-color: #fff;
+    border: 2px solid #ffcc00;
+    color: #333;
+    margin-top: 20px;
+}
+
+.selection-button.back-button:hover {
+    background-color: #fff9e6;
+}
+
+/* ...existing code... */
+
+.confirmation-dialog, .receipt-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    width: 90%;
+    max-width: 570px;
+    text-align: center;
+}
+
+.confirmation-dialog h2, .receipt-modal h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.confirmation-dialog button, .receipt-modal button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.confirmation-dialog button:hover, .receipt-modal button:hover {
+    background-color: #e6b800;
+}
+
+.receipt-modal {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: 800px;
+    max-height: 90vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.receipt-modal h2 {
+    padding: 20px;
+    margin: 0;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.receipt-table-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    margin-bottom: 0;
+    min-height: 200px;
+    max-height: calc(90vh - 160px); /* Account for header and buttons */
+}
+
+.receipt-buttons {
+    padding: 15px;
+    border-top: 2px solid #f0f0f0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: white;
+}
+
+/* Add scrollbar styling for better visibility */
+.receipt-table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.receipt-table-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.receipt-table-container::-webkit-scrollbar-thumb {
+    background: #ffcc00;
+    border-radius: 4px;
+    border: 2px solid #f0f0f0;
+}
+
+.receipt-table-container::-webkit-scrollbar-thumb:hover {
+    background: #e6b800;
+}
+
+.receipt-modal {
+    max-height: fit-content;
+    overflow: hidden; /* Change from auto to hidden */
+    padding: 20px;
+    width: 95%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.receipt-table-container {
+    overflow-y: auto;
+    margin: 20px 0;
+    flex: 1;
+    padding-bottom: 20px; /* Add padding to prevent content from being hidden behind buttons */
+}
+
+.receipt-buttons {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 15px 0;
+    border-top: 2px solid #f0f0f0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.receipt-buttons button {
+    min-width: 120px;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.receipt-buttons .print-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.receipt-buttons .close-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+.receipt-buttons button:hover {
+    opacity: 0.9;
+}
+
+.receipt-modal table {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    table-layout: fixed;
+}
+
+.receipt-modal th {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 12px 8px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.receipt-modal td {
+    padding: 8px;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+/* Column widths */
+.receipt-modal th:nth-child(1), 
+.receipt-modal td:nth-child(1) { width: 20%; } /* Category - Item */
+
+.receipt-modal th:nth-child(2),
+.receipt-modal td:nth-child(2) { width: 10%; } /* Size */
+
+.receipt-modal th:nth-child(3),
+.receipt-modal td:nth-child(3) { width: 8%; } /* Quantity */
+
+.receipt-modal th:nth-child(4),
+.receipt-modal td:nth-child(4) { width: 12%; } /* Price */
+
+.receipt-modal th:nth-child(5),
+.receipt-modal td:nth-child(5) { width: 15%; } /* Sauces */
+
+.receipt-modal th:nth-child(6),
+.receipt-modal td:nth-child(6) { width: 15%; } /* Extras */
+
+.receipt-modal th:nth-child(7),
+.receipt-modal td:nth-child(7) { width: 12%; } /* Salads */
+
+.receipt-modal th:nth-child(8),
+.receipt-modal td:nth-child(8) { width: 8%; } /* Add-ons */
+
+.receipt-modal tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.receipt-modal tr:hover {
+    background-color: #fff9e6;
+}
+
+.receipt-modal button {
+    margin-top: 20px;
+    min-width: 120px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .receipt-modal {
+        font-size: 12px;
+        padding: 10px;
+    }
+    
+    .receipt-modal th,
+    .receipt-modal td {
+        padding: 6px 4px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* ...existing code... */
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.cart-item:hover {
+    background-color: #f9f9f9;
+}
+
+.cart-item-content {
+    flex: 1;
+}
+
+.cart-item-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.cart-item-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-item-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.cart-item-details {
+    font-size: 14px;
+    color: #666;
+}
+
+.cart-item-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+.cart-item-actions button {
+    background: none !important;
+    box-shadow: none !important;
+    width: auto !important;
+    padding: 8px !important;
+    margin: 0 5px !important;
+    border-radius: 50% !important;
+    transition: transform 0.2s ease !important;
+}
+
+.cart-item-actions .edit-btn {
+    color: #2196F3 !important;
+    background: rgba(33, 150, 243, 0.1) !important;
+}
+
+.cart-item-actions .delete-btn {
+    color: #ff4444 !important;
+    background: rgba(255, 68, 68, 0.1) !important;
+}
+
+.cart-item-actions button:hover {
+    transform: scale(1.1) !important;
+    box-shadow: none !important;
+}
+
+.cart-item-actions i {
+    font-size: 18px;
+}
+
+.cart-checkout-btn {
+    background: linear-gradient(145deg, #4CAF50, #45a049) !important;
+    color: white !important;
+    margin-top: 20px !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+}
+
+.cart-checkout-btn:hover {
+    background: linear-gradient(145deg, #45a049, #4CAF50) !important;
+}
+
+.cart-checkout-btn {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-checkout-btn:hover {
+    background-color: #e6b800;
+}
+
+/* ...existing code... */
+
+.order-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
+.order-status.new {
+    background-color: #ff9800;
+    color: white;
+}
+
+.order-status.preparing {
+    background-color: #2196F3;
+    color: white;
+}
+
+.order-status.ready {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.order-status.completed {
+    background-color: #9e9e9e;
+    color: white;
+}
+
+.status-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.status-button.preparing {
+    background-color: #2196F3;
+    color: white;
+}
+
+.status-button.ready {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.status-button.completed {
+    background-color: #9e9e9e;
+    color: white;
+}
+
+.completed-text {
+    color: #9e9e9e;
+    font-style: italic;
+}
+
+/* ...existing code... */
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 11px;
+    width: 100%;
+    align-items: center;
+}
+
+.option-box {
+    position: relative;
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.option-box:hover {
+    border-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-box.selected {
+    border-color: #ffcc00;
+    background-color: #fff9e6;
+}
+
+.option-box input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.option-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.option-price {
+    font-size: 12px;
+    color: #ff0000;
+    font-weight: 500;
+}
+
+.option-box.free .option-price {
+    color: #4CAF50;
+}
+
+.option-box .option-price {
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.option-box[data-sauce-type] .option-price {
+    font-weight: 500;
+}
+
+.options-section {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.options-section h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ffcc00;
+    text-align: left;
+    padding-left: 15px;
+}
+
+/* ...existing code... */
+
+#milkshake-flavors {
+    display: none;
+}
+
+.option-box input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.option-box input[type="radio"]:checked + .option-name {
+    color: #ffcc00;
+}
+
+.option-box input[type="radio"]:checked ~ .option-price {
+    color: #4CAF50;
+}
+
+/* ...existing code... */
+
+/* Update the radio button styles */
+.option-box input[type="radio"]:checked ~ .option-name {
+    color: #333;
+}
+
+.option-box input[type="radio"]:checked + .option-name {
+    color: #333;
+}
+
+.option-box.selected-flavor {
+    border-color: #ffcc00;
+    background-color: #fff9e6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ...existing code... */
+
+
+
+.user-profile {
+    position: fixed;
+    top: 16px;
+    right: 90px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding-bottom: 5px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: row;
+}
+
+#user-name {
+    font-weight: bold;
+    color: #333;
+    margin-top: 3px;
+}
+
+.logout-btn {
+    background: #ffcc00;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #e6b800;
+}
+
+.points-info {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+#points-display {
+    background: #fff9e6;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+    border: 2px dashed #ffcc00;
+}
+
+#points-balance {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin: 10px 0;
+}
+
+/* ...existing code... */
+
+.points-redemption {
+    margin: 15px 0 0 0;
+    padding: 15px;
+    background: #fff9e6;
+    border: 1px dashed #ffcc00;
+    border-radius: 5px;
+}
+
+.points-info {
+    margin-bottom: 10px;
+}
+
+.points-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.redeem-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.redeem-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.discount-row {
+    color: #4CAF50;
+    font-style: italic;
+}
+
+.final-total {
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+/* ...existing code... */
+
+.receipt-modal .discount-row {
+    color: #4CAF50;
+    font-style: italic;
+}
+
+.receipt-modal .final-total {
+    font-size: 1.2em;
+    background-color: #f9f9f9;
+}
+
+.receipt-modal tfoot tr {
+    border-top: 2px solid #ffcc00;
+}
+
+/* ...existing code... */
+
+.receipt-modal .savings-row {
+    background-color: #f0fff0;
+    font-style: italic;
+    padding: 10px;
+}
+
+.receipt-modal .discount-row {
+    color: #4CAF50;
+    font-style: italic;
+}
+
+.receipt-modal .final-total {
+    font-size: 1.2em;
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.receipt-modal tfoot tr {
+    border-top: 2px solid #ffcc00;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.buttoni {
+    display: none; /* Always start hidden */
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 100%;
+    margin-top: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttoni::before {
+    content: '\f0a8'; /* Font Awesome back arrow icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+.buttoni:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+    background: linear-gradient(145deg, #45a049, #4CAF50);
+}
+
+.buttoni:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(76, 175, 80, 0.2);
+}
+
+.buttoni::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.buttoni:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* ...existing code... */
+
+.customization-content .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(145deg, #f5f5f5, #e6e6e6);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.customization-content .close-button:hover {
+    background: linear-gradient(145deg, #e6e6e6, #f5f5f5);
+    color: #333;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.customization-content .close-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 30%;
+    }
+    
+    .sidebar-item {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 35%;
+    }
+    
+    .sidebar-item-content {
+        gap: 3px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%;
+        max-height: 40vh;
+    }
+    
+    .sidebar-item {
+        grid-template-columns: 60px 1fr;
+        gap: 10px;
+    }
+}
+
+/* ...existing code... */
+
+.standby-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.slide-container {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-overlay {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.slide-overlay h1 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+}
+
+.continue-order-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.continue-order-dialog.hidden {
+    display: none !important;  /* Force hide when hidden class is present */
+}
+
+/* Add a new class for when the slideshow is active */
+body[data-slideshow-active="true"] .continue-order-dialog {
+    display: none !important;  /* Force hide when slideshow is active */
+}
+
+.dialog-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.timer-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ffcc00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dialog-buttons button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.dialog-buttons button:first-child {
+    background: #4CAF50;
+    color: white;
+}
+
+.dialog-buttons button:last-child {
+    background: #f44336;
+    color: white;
+}
+
+.dialog-buttons button:hover {
+    transform: scale(1.05);
+}
+
+/* ...existing code... */
+
+/* Add this new rule to handle modal visibility */
+.standby-slideshow:not(.hidden) ~ .continue-order-dialog {
+    display: none !important; /* Force hide dialog when slideshow is visible */
+    pointer-events: none; /* Prevent any interaction */
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.continue-order-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-content {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.session-icon {
+    font-size: 3rem;
+    color: #dc3545;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.dialog-content h2 {
+    color: #dc3545;
+    font-size: 2rem;
+    margin: 0 0 15px;
+    font-weight: 600;
+}
+
+.session-message {
+    font-size: 1.2rem;
+    color: #495057;
+    margin-bottom: 20px;
+}
+
+.timer-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #dc3545, #c82333);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(220, 53, 69, 0.3);
+}
+
+#countdown {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.timer-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.restart-message {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.continue-order-dialog.hidden {
+    display: none !important;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .dialog-content {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    .dialog-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .session-message {
+        font-size: 1.1rem;
+    }
+
+    .timer-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    #countdown {
+        font-size: 2.5rem;
+    }
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+/* Drink Labels and Tags */
+.drink-details {
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.drink-main-info {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.volume-badge, .type-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.volume-badge {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.type-badge {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.drink-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.drink-tag {
+    background: #f5f5f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    color: #616161;
+}
+
+.nutrition-info {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.nutrition-tag {
+    background: #fce4ec;
+    color: #c2185b;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+/* ...existing code... */
+
+/* Preview tags in menu grid */
+.drink-preview {
+    margin: 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+}
+
+.volume-badge-small, .type-badge-small {
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.volume-badge-small {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.type-badge-small {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.preview-tags {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.preview-tag {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7em;
+    color: #616161;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.customization-content[data-item-type="drink"] {
+    padding-bottom: 80px;
+}
+
+.drink-customization-details {
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.drink-customization-details .drink-details {
+    margin: 0;
+}
+
+.drink-customization-details .drink-main-info {
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.drink-customization-details .volume-badge,
+.drink-customization-details .type-badge {
+    font-size: 1em;
+    padding: 8px 15px;
+}
+
+.drink-customization-details .drink-tags {
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.drink-customization-details .nutrition-info {
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* ...existing code... */
+
+.loading-spinner {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.loading-spinner::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ffcc00;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-message {
+    text-align: center;
+    padding: 20px;
+    color: #ff0000;
+    background: #fff1f1;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+/* ...existing code... */
+
+/* Specific styles for different drink types */
+.customization-content[data-item-type="coke"] h2 {
+    margin-bottom: 9px;
+}
+
+.customization-content[data-item-type="coke"] .quantity-buttona {
+    margin: 598px 141px;
+}
+
+.customization-content[data-item-type="coke"] .quantity-buttond {
+    margin: 598px 437px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for water type */
+.customization-content[data-item-type="water"] h2 {
+    margin-bottom: 9px;
+}
+
+.customization-content[data-item-type="water"] .quantity-buttona {
+    margin: 729px 141px;
+}
+
+.customization-content[data-item-type="water"] .quantity-buttond {
+    margin: 730px 437px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for bundaberg type */
+.customization-content[data-item-type="bundaberg"] h2 {
+    margin-bottom: 9px;
+}
+
+.customization-content[data-item-type="bundaberg"] .quantity-buttona {
+    margin: 764px 141px;
+}
+
+.customization-content[data-item-type="bundaberg"] .quantity-buttond {
+    margin: 764px 437px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for solo type */
+.customization-content[data-item-type="solo"] h2 {
+    margin-bottom: 9px;
+}
+
+.customization-content[data-item-type="solo"] .quantity-buttona {
+    margin: 749px 141px;
+}
+
+.customization-content[data-item-type="solo"] .quantity-buttond {
+    margin: 749px 437px;
+}
+
+/* Make sure solo styles override general drinks styles */
+.customization-content[data-item-type="solo"] {
+    padding-bottom: 129px;
+}
+
+.customization-content[data-item-type="solo"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+.customization-content[data-item-type="solo"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for coke 600mL bottles */
+.customization-content[data-item-type="coke600"] h2 {
+    margin-bottom: -26px;
+}
+
+.customization-content[data-item-type="coke600"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+.customization-content[data-item-type="coke600"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure coke600 styles override general drinks styles */
+.customization-content[data-item-type="coke600"] {
+    padding-bottom: 129px;
+}
+
+.customization-content[data-item-type="coke600"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+.customization-content[data-item-type="coke600"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for coke 375mL */
+.customization-content[data-item-type="coke375"] h2 {
+    margin-bottom: -31px;
+}
+
+.customization-content[data-item-type="coke375"] .quantity-buttona {
+    margin: 708px 141px;
+}
+
+.customization-content[data-item-type="coke375"] .quantity-buttond {
+    margin: 708px 437px;
+}
+
+/* Make sure coke375 styles override general drinks styles */
+.customization-content[data-item-type="coke375"] {
+    padding-bottom: 129px;
+}
+
+.customization-content[data-item-type="coke375"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+.customization-content[data-item-type="coke375"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for coke 390mL */
+.customization-content[data-item-type="coke390"] h2 {
+    margin-bottom: -26px;
+}
+
+.customization-content[data-item-type="coke390"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+.customization-content[data-item-type="coke390"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure coke390 styles override general drinks styles */
+customization-content[data-item-type="coke390"] {
+    padding-bottom: 129px;
+}
+
+.customization-content[data-item-type="coke390"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="coke390"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for coke 1.25L */
+.customization-content[data-item-type="coke1250"] h2 {
+    margin-bottom: -26px;
+}
+
+customization-content[data-item-type="coke1250"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+customization-content[data-item-type="coke1250"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure coke1250 styles override general drinks styles */
+customization-content[data-item-type="coke1250"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="coke1250"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="coke1250"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for mojo type */
+.customization-content[data-item-type="mojo"] h2 {
+    margin-bottom: -26px;
+}
+
+customization-content[data-item-type="mojo"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+customization-content[data-item-type="mojo"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure mojo styles override general drinks styles */
+customization-content[data-item-type="mojo"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="mojo"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="mojo"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for fuze type */
+.customization-content[data-item-type="fuze"] h2 {
+    margin-bottom: -26px;
+}
+
+customization-content[data-item-type="fuze"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+customization-content[data-item-type="fuze"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure fuze styles override general drinks styles */
+customization-content[data-item-type="fuze"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="fuze"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="fuze"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for tea type */
+.customization-content[data-item-type="tea"] h2 {
+    margin-bottom: -26px;
+}
+
+customization-content[data-item-type="tea"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+customization-content[data-item-type="tea"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure tea styles override general drinks styles */
+customization-content[data-item-type="tea"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="tea"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="tea"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for lipton type */
+.customization-content[data-item-type="lipton"] h2 {
+    margin-bottom: -26px;
+}
+
+customization-content[data-item-type="lipton"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+customization-content[data-item-type="lipton"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure lipton styles override general drinks styles */
+customization-content[data-item-type="lipton"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="lipton"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="lipton"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for kirks type */
+.customization-content[data-item-type="kirks"] h2 {
+    margin-bottom: -26px;
+}
+
+customization-content[data-item-type="kirks"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+customization-content[data-item-type="kirks"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure kirks styles override general drinks styles */
+customization-content[data-item-type="kirks"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="kirks"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="kirks"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for powerade type */
+.customization-content[data-item-type="powerade"] h2 {
+    margin-bottom: -26px;
+}
+
+customization-content[data-item-type="powerade"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+customization-content[data-item-type="powerade"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure powerade styles override general drinks styles */
+customization-content[data-item-type="powerade"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="powerade"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="powerade"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for cascade type */
+.customization-content[data-item-type="cascade"] h2 {
+    margin-bottom: -26px;
+}
+
+customization-content[data-item-type="cascade"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+customization-content[data-item-type="cascade"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure cascade styles override general drinks styles */
+customization-content[data-item-type="cascade"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="cascade"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="cascade"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for gatorade type */
+.customization-content[data-item-type="gatorade"] h2 {
+    margin-bottom: -26px;
+}
+
+customization-content[data-item-type="gatorade"] .quantity-buttona {
+    margin: 714px 141px;
+}
+
+customization-content[data-item-type="gatorade"] .quantity-buttond {
+    margin: 714px 437px;
+}
+
+/* Make sure gatorade styles override general drinks styles */
+customization-content[data-item-type="gatorade"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="gatorade"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="gatorade"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for coke $1.50 */
+.customization-content[data-item-type="coke150"] h2 {
+    margin-bottom: 11px;
+}
+
+
+
+/* Make sure coke150 styles override general drinks styles */
+customization-content[data-item-type="coke150"] {
+    padding-bottom: 129px;
+}
+
+customization-content[data-item-type="coke150"] img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: -21px;
+}
+
+customization-content[data-item-type="coke150"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Add specific styles for baghlava type */
+
+.customization-content[data-item-type="baghlava"] .quantity-buttona {
+    margin: 451px  141px;
+}
+
+.customization-content[data-item-type="baghlava"] .quantity-buttond {
+    margin: 451px  437px;
+}
+
+
+
+.customization-content[data-item-type="Spinach & Feta"] .quantity-buttona {
+    margin: 723px 141px;
+}
+
+.customization-content[data-item-type="Spinach & Feta"] .quantity-buttond {
+    margin: 723px  437px;
+}
+
+
+.customization-content[data-item-type="Chicken (Cheese & Mushroom)"] .quantity-buttona {
+    margin: 724px  141px;
+}
+
+.customization-content[data-item-type="Chicken (Cheese & Mushroom)"] .quantity-buttond {
+    margin: 724px  437px;
+}
+
+.customization-content[data-item-type="Lamb (Cheese, Capsicum, Tomato, Onion)"] .quantity-buttona {
+    margin: 724px  141px;
+}
+
+customization-content[data-item-type="Lamb (Cheese, Capsicum, Tomato, Onion)"] .quantity-buttond {
+    margin: 724px  437px;
+}
+
+.customization-content[data-item-type="Spinach & Feta"] img {
+  
+    margin-bottom: -57px;
+}
+
+.customization-content[data-item-type="Chicken (Cheese & Mushroom)"] img {
+  
+    margin-bottom: -57px;
+}
+
+.customization-content[data-item-type="Lamb (Cheese, Capsicum, Tomato, Onion)"] img {
+  
+    margin-bottom: -57px;
+}
+
+
+
+.customization-content[data-item-type="baghlava"] div {
+    margin-bottom: -5px;
+}
+
+/* ...existing code... */
+
+/* Drink Filter System */
+
+/* Drink Filter System */
+.drink-filters {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filter-section {
+    margin-bottom: 25px;
+}
+
+.filter-section h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-tag {
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    color: #666;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    min-height: 48px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.filter-tag i {
+    font-size: 18px;
+}
+
+.filter-tag:active {
+    transform: scale(0.95);
+}
+
+.filter-tag.active {
+    background: #ffcc00;
+    color: #333;
+    border-color: #ffcc00;
+    box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
+}
+
+.filter-clear {
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.filter-clear i {
+    font-size: 18px;
+}
+
+.filter-clear:active {
+    transform: scale(0.95);
+}
+
+/* Make sure inputs are non-interactive for touch */
+.drink-search input:focus {
+    outline: none;
+    border-color: #ffcc00;
+}
+
+/* Prevent text selection */
+.filter-tags, .filter-tag {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.drink-search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.drink-search input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 18px;
+    background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23999"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat;
+    background-position: calc(100% - 15px) center;
+    background-size: 24px;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* ...existing code... */
+
+/* Virtual Keyboard Styles */
+.virtual-keyboard-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ececec;
+    padding: 20px;
+    border-top: 2px solid #ddd;
+    box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out;
+}
+
+.virtual-keyboard-wrapper.hidden {
+    transform: translateY(100%);
+}
+
+.keyboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.keyboard-title {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+}
+
+.keyboard-close {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #666;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.keyboard-close:hover {
+    color: #333;
+}
+
+.simple-keyboard {
+    border-radius: 10px;
+    background: #f5f5f5 !important;
+    padding: 10px !important;
+}
+
+.simple-keyboard .hg-button {
+    height: 50px !important;
+    border-radius: 5px !important;
+    background: white !important;
+    border: 1px solid #ddd !important;
+    color: #333 !important;
+    font-size: 1.2em !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+.simple-keyboard .hg-button:active {
+    background: #ffcc00 !important;
+    color: white !important;
+}
+
+/* Make inputs look clickable */
+input[data-keyboard="true"] {
+    cursor: pointer;
+    background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23999"><path d="M20 5H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 12H4V7h16v10zm-9-9h2v2h-2zm0 3h2v2h-2zm0 3h2v2h-2zm-3-6h2v2H8zm0 3h2v2H8zm0 3h2v2H8zM5 8h2v2H5zm0 3h2v2H5zm0 3h2v2H5z"/></svg>') no-repeat calc(100% - 10px) center;
+    background-size: 20px;
+}
+
+.virtual-keyboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.key:active {
+    background: #ffcc00;
+    color: white;
+    transform: translateY(2px);
+}
+
+.key.space {
+    width: 200px;
+}
+
+.key.backspace {
+    width: 100px;
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.key.done {
+    width: 100%;
+    background: #e8f5e9;
+    color: #388e3c;
+    font-weight: bold;
+}
+
+/* Remove old keyboard-related styles */
+.virtual-keyboard-wrapper {
+    display: none;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.virtual-keyboard {
+    /* Update existing keyboard styles */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    display: none;
+    padding: 20px;
+    background: #f5f5f5;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+}
+
+.drink-search input {
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #ddd;
+    width: 100%;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.drink-search input:focus {
+    border-color: #ffcc00;
+    outline: none;
+}
+
+/* Add visual indicator for keyboard availability */
+.drink-search input::after {
+    content: '⌨';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+}
+
+/* ...existing code... */
+
+.virtual-keyboard {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: block;
+}
+
+.key {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: block;
+    cursor: pointer;
+}
+
+/* ...existing code... */
+
+/* Add to your styles.css */
+
+.customization-content[data-category="Chips and Nuggets"] .options-section:has(input[name="salad"]) {
+    display: none !important;
+}
+
+/* Additional specific rule for items with "Chips" in the title */
+.customization-content[data-item-title*="chips"] .options-section:has(input[name="salad"]) {
+    display: none !important;
+}
+
+/* ...existing code... */
+
+
+#menu-grid .menu-item .menu-item-price {
+    display: none; /* Hide prices on main category menu */
+}
+
+#product-grid .menu-item .menu-item-price {
+    display: block; /* Show prices in product view */
+    font-size: 18px;
+    color: #ff0000;
+}
+
+/* ...existing code... */
+
+.virtual-keyboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f8f9fa;
+    padding: 10px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    border-top: 1px solid #dee2e6;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    margin-left: -16px;
+}
+
+.key {
+    min-width: 60px;
+    height: 56px;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #212529;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    margin-right: 3px;
+}
+
+.key:active {
+    background: #e9ecef;
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.key.space {
+    width: 286px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.key.backspace {
+    width: 228px;
+    background: #e9ecef;
+    color: #495057;
+    font-size: 16px;
+}
+
+.key.done {
+    width: 492px;
+    background: #ffcc00;
+    color: #212529;
+    font-weight: 600;
+    border-color: #ffbb00;
+}
+
+.key.done:active {
+    background: #ffbb00;
+}
+
+@media (max-width: 480px) {
+    .key {
+        min-width: 32px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .key.space {
+        width: 150px;
+    }
+
+    .key.backspace {
+        width: 65px;
+    }
+
+    .key.done {
+        width: 80px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .virtual-keyboard {
+        background: #212529;
+        border-top-color: #343a40;
+    }
+
+    .key {
+        background: #343a40;
+        border-color: #495057;
+        color: #f8f9fa;
+    }
+
+    .key:active {
+        background: #495057;
+    }
+
+    .key.backspace {
+        background: #495057;
+        color: #f8f9fa;
+    }
+
+    .key.done {
+        background: #ffcc00;
+        color: #212529;
+    }
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.points-redemption button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.points-redemption button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.points-redemption button.restore-points {
+    background-color: #ff9800;
+}
+
+.points-redemption button.restore-points:hover {
+    background-color: #f57c00;
+}
+
+/* ...existing code... */
+
+/* Drink Filter System Fixes */
+.drink-filters {
+    margin: 0px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 21px;
+}
+
+.drink-search {
+    margin-bottom: 20px;
+}
+
+.drink-search input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-tag {
+    padding: 8px 15px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.filter-tag.active {
+    background: #ffcc00;
+    color: #333;
+}
+
+/* Virtual Keyboard Fixes */.virtual-keyboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #212529;
+    padding: 10px;
+    z-index: 10000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.key {
+    min-width: 40px;
+    height: 40px;
+    margin: 1px;
+    padding: 10px;
+    background: #343a40;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.key:active {
+    background: #ffcc00;
+}
+
+.key.space {
+    width: 200px;
+}
+
+.key.backspace {
+    width: 80px;
+}
+
+.key.done {
+    width: 456px;
+    background: #ffcc00;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.filter-tag {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.filter-tag[style*="display: none"] {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+.filter-tags {
+    gap: 8px;
+    flex-wrap: wrap;
+    min-height: 48px; /* Prevent layout shift when filters disappear */
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.points-confirmation-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 10002;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    animation: dialogFadeIn 0.3s ease-out;
+}
+
+.points-confirmation-dialog h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.points-confirmation-content {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.points-confirmation-value {
+    font-size: 1.8em;
+    color: #4CAF50;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.points-confirmation-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.points-confirmation-buttons button {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.confirm-redeem {
+    background: #4CAF50;
+    color: white;
+}
+
+.cancel-redeem {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.points-confirmation-buttons button:hover {
+    transform: translateY(-2px);
+}
+
+.points-confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 10001;
+    backdrop-filter: blur(4px);
+    animation: overlayFadeIn 0.3s ease-out;
+}
+
+@keyframes dialogFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.cart-summary {
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.cart-subtotal {
+    color: #666;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+
+.cart-discount {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cart-final-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px dashed #ddd;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+/* Quick Orders Styles */
+.quick-order-dialog,
+.quick-orders-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.quick-orders-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-orders-content h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ffcc00;
+    text-align: center;
+}
+
+.quick-orders-list {
+    overflow-y: auto;
+    margin: 0 -30px;
+    padding: 0 30px;
+    flex: 1;
+}
+
+.quick-order-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 8px;
+}
+
+.quick-order-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-color: #ffcc00;
+}
+
+.quick-order-info {
+    flex: 1;
+}
+
+.quick-order-info h3 {
+    margin: 0 0 5px;
+    color: #333;
+    font-size: 18px;
+}
+
+.quick-order-info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.quick-order-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.quick-order-actions button {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.order-again-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.delete-order-btn {
+    background: #ff4444;
+    color: white;
+}
+
+.order-again-btn:hover {
+    background: #45a049;
+}
+
+.delete-order-btn:hover {
+    background: #ff3333;
+}
+
+.close-quick-orders {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #f5f5f5;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.close-quick-orders:hover {
+    background: #eee;
+}
+
+.no-orders-message {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-style: italic;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.quick-order-content {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    padding: 35px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 3px 10px rgba(0,0,0,0.1);
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.1);
+    animation: fadeInScale 0.3s ease-out;
+}
+
+.quick-order-content h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin: 0 0 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ffcc00;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.quick-order-content p {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#quick-order-name {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    background: #fff;
+    margin-left: -30px;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23999"><path d="M20 5H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 12H4V7h16v10zm-9-9h2v2h-2zm0 3h2v2h-2zm0 3h2v2h-2zm-3-6h2v2H8zm0 3h2v2H8zm0 3h2v2H8zM5 8h2v2H5zm0 3h2v2H5zm0 3h2v2H5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 20px;
+    padding-right: 40px;
+}
+
+#quick-order-name:focus {
+    border-color: #ffcc00;
+    outline: none;
+}
+
+.quick-order-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.quick-order-buttons button {
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.save-quick-order {
+    background: linear-gradient(145deg, #ffcc00, #ffb700);
+    color: #333;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
+}
+
+.save-quick-order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.3);
+    background: linear-gradient(145deg, #ffb700, #ffcc00);
+}
+
+.cancel-quick-order {
+    background: #fff;
+    color: #666;
+    border: 2px solid #e0e0e0;
+}
+
+.cancel-quick-order:hover {
+    background: #f5f5f5;
+    border-color: #ccc;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-order-content {
+        padding: 25px;
+        width: 95%;
+    }
+
+    .quick-order-buttons button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.quick-order-content #quick-order-name {
+    cursor: pointer;
+    background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23999"><path d="M20 5H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 12H4V7h16v10zm-9-9h2v2h-2zm0 3h2v2h-2zm0 3h2v2h-2zm-3-6h2v2H8zm0 3h2v2H8zm0 3h2v2H8zM5 8h2v2H5zm0 3h2v2H5zm0 3h2v2H5z"/></svg>') no-repeat calc(100% - 10px) center;
+    background-size: 20px;
+}
+
+/* Ensure the quick order dialog stays above the keyboard */
+.quick-order-dialog {
+    z-index: 10002;
+}
+
+/* Position the quick order content above the keyboard */
+.quick-order-dialog .quick-order-content {
+    position: relative;
+    z-index: 10003;
+    margin-bottom: 300px; /* Space for keyboard */
+}
+
+/* ...existing code... */
+

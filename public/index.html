@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Kebab Shop Self-Service App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+</head>
+<body>
+    <!-- Standby Slideshow -->
+    <div id="standby-slideshow" class="standby-slideshow">
+        <div class="slide-container">
+            <img src="images/standby/slide1.jpg" alt="Kebab Special" class="slide">
+            <img src="images/standby/slide2.jpg" alt="Fresh Ingredients" class="slide">
+            <img src="images/standby/slide3.jpg" alt="Restaurant Interior" class="slide">
+        </div>
+        <div class="slide-overlay">
+            <h1>Touch Screen to Order</h1>
+        </div>
+    </div>
+
+    <!-- Continue Order Dialog -->
+    <div id="continue-order-dialog" class="continue-order-dialog hidden">
+        <div class="dialog-content">
+            <div class="session-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <h2>Session Expired</h2>
+            <p class="session-message">For your security, this session will restart in</p>
+            <div class="timer-circle">
+                <span id="countdown">15</span>
+                <span class="timer-label">seconds</span>
+            </div>
+            <p class="restart-message">The kiosk will return to the main screen automatically.</p>
+        </div>
+    </div>
+
+    <!-- Auth Selection Screen - This should be the first screen -->
+    <div id="auth-selection" class="selection-screen">
+        <h1>Welcome to Kebab Shop</h1>
+        <p>Please select how you would like to order:</p>
+        <button class="selection-button" onclick="location.href='auth.html'">
+            <i class="fas fa-user-circle"></i> Order as Member
+        </button>
+        <button class="selection-button" onclick="continueAsGuest()">
+            <i class="fas fa-user-alt"></i> Order as Guest
+        </button>
+    </div>
+
+    <!-- Order Type Selection - This comes after auth selection -->
+    <div id="selection-screen" class="selection-screen hidden">
+        <h1>Welcome to Kebab Shop</h1>
+        <div id="user-type-display"></div>
+        <p>Please choose your order type:</p>
+        <button class="selection-button" onclick="selectOption('Dine-In')">
+            <i class="fas fa-utensils"></i> Dine-In
+        </button>
+        <button class="selection-button" onclick="selectOption('takeaway')">
+            <i class="fas fa-shopping-bag"></i> Takeaway
+        </button>
+        <button class="selection-button back-button" onclick="goBackToAuth()">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+    </div>
+
+    <!-- Add user profile section -->
+    <div id="user-profile" class="user-profile hidden">
+        <div class="profile-header">
+            <span id="user-name"></span>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+        <div class="points-info">
+            <span>Points: </span>
+            <span id="user-points">0</span>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-form" class="auth-container hidden">
+        <!-- Login form will be dynamically added -->
+    </div>
+
+    <!-- Register Form -->
+    <div id="register-form" class="auth-container hidden">
+        <!-- Register form will be dynamically added -->
+    </div>
+
+    <div id="main-container" class="container hidden">
+        <!-- Sidebar with frequent items -->
+        <div class="sidebar">
+            <h2>Frequent Orders</h2>
+            <div class="sidebar-item" onclick="showProducts('Kebabs'); showCustomization('Mixed', 'images/kebabs.jpg', 12.50, 'Kebab')">
+                <img src="images/kebabs.jpg" alt="Mixed Kebab">
+                <div class="sidebar-item-content">
+                    <h3 class="sidebar-item-title">Mixed Kebab</h3>
+                    <p class="sidebar-item-description">Tender mix of lamb and chicken with fresh salads</p>
+                    <span class="sidebar-item-price">$12.50</span>
+                </div>
+                <span class="sidebar-item-badge">Popular</span>
+            </div>
+            
+            <div class="sidebar-item" onclick="showProducts('Snack Pack'); showCustomization('Mixed', 'images/snack_pack.png', 15.00, 'Snack Pack')">
+                <img src="images/snack_pack.png" alt="Mixed HSP">
+                <div class="sidebar-item-content">
+                    <h3 class="sidebar-item-title">Mixed HSP</h3>
+                    <p class="sidebar-item-description">Mixed chicken and lamb over chips with special sauces</p>
+                    <span class="sidebar-item-price">$15.00</span>
+                </div>
+                <span class="sidebar-item-badge">Best Seller</span>
+            </div>
+            
+            <div class="sidebar-item" onclick="showProducts('Shish Kebab'); showCustomization('Shish Kebab', 'images/shish_kebab.png', 4.00, 'Shish Kebab')">
+                <img src="images/shish_kebab.png" alt="Shish Kebab">
+                <div class="sidebar-item-content">
+                    <h3 class="sidebar-item-title">Shish Kebab</h3>
+                    <p class="sidebar-item-description">Marinated meat skewers with grilled vegetables</p>
+                    <span class="sidebar-item-price">$4.00</span>
+                </div>
+                <span class="sidebar-item-badge">Trending</span>
+            </div>
+            
+            <div class="sidebar-item" onclick="showProducts('Kebabs'); showCustomization('Falafel', 'images/vegetarian.png', { regular: 11.00, large: 13.00, jumbo: 15.00 }, 'Kebabs')">
+                <img src="images/vegetarian.png" alt="Falafel Pack">
+                <div class="sidebar-item-content">
+                    <h3 class="sidebar-item-title">Falafel Pack</h3>
+                    <p class="sidebar-item-description">Fresh falafels with hummus and salad</p>
+                    <span class="sidebar-item-price">$11.00</span>
+                </div>
+                <span class="sidebar-item-badge">Vegetarian</span>
+            </div>
+
+            <button class="buttoni hidden" id="back-button" onclick="goBack()">Back to Menu</button> <!-- Initially hidden -->
+        </div>
+
+        <!-- Main Menu (Categories) -->
+        <div id="main-content" class="main-content">
+            <h1>Main Menu</h1>
+            <div id="menu-grid" onclick="scrollToProductView()" class="menu-grid">
+                <div id="menu-item" class="menu-item" onclick="showProducts('Kebabs')">
+                    <img src="images/kebabs.jpg" alt="Kebabs">
+                    <div class="menu-item-text">Kebabs</div>
+                    <div class="menu-item-price">$12.50</div>
+                </div>
+                <div class="menu-item" onclick="showProducts('Vegetarian')">
+                    <img src="images/vegetarian.png" alt="Vegetarian">
+                    <div class="menu-item-text">Vegetarian</div>
+                    <div class="menu-item-price">$9.00</div>
+                </div>
+                <div class="menu-item" onclick="showProducts('Borek')">
+                    <img src="images/borek.png" alt="Borek">
+                    <div class="menu-item-text">Borek</div>
+                    <div class="menu-item-price">$8.50</div>
+                </div>
+                <div class="menu-item" onclick="showProducts('Shish Kebab')">
+                    <img src="images/shish_kebab.png" alt="Shish Kebab">
+                    <div class="menu-item-text">Shish Kebab</div>
+                    <div class="menu-item-price">$4.00</div>
+                </div>
+                <div class="menu-item" onclick="showProducts('Mega Meal')">
+                    <img src="images/mega_meal.png" alt="Mega Meal">
+                    <div class="menu-item-text">Mega Meal</div>
+                    <div class="menu-item-price">$18.00</div>
+                </div>
+                <div class="menu-item" onclick="showProducts('Desserts')">
+                    <img src="images/desserts.jpg" alt="Desserts">
+                    <div class="menu-item-text">Desserts</div>
+                    <div class="menu-item-price">$5.00</div>
+                </div>
+                <div class="menu-item" onclick="showProducts('Snack Pack')">
+                    <img src="images/snack_pack.png" alt="Snack Pack">
+                    <div class="menu-item-text">Snack Pack</div>
+                    <div class="menu-item-price">$15.00</div>
+                </div>
+                <div class="menu-item" onclick="showProducts('Chips and Nuggets')">
+                    <img src="images/chips_and_nuggets.png" alt="Chips and Nuggets">
+                    <div class="menu-item-text">Chips and Nuggets</div>
+                    <div class="menu-item-price">$3.50</div>
+                </div>
+                <div class="menu-item" onclick="showProducts('Drinks')">
+                    <img src="images/drinks.png" alt="Drinks">
+                    <div class="menu-item-text">Drinks</div>
+                    <div class="menu-item-price">$1.50</div>
+                </div>
+            </div>
+
+            <!-- Product View -->
+            <div id="product-view" class="menu hidden">
+                <h1 id="category-title">Category</h1>
+                <div id="product-grid" class="menu-grid">
+                    <!-- Products will be dynamically injected here -->
+                </div>
+            </div>
+
+            <!-- Customization Window -->
+            <div id="customization-window" class="customization-window hidden">
+                <div class="customization-content">
+                    <button class="close-button" onclick="closeCustomization()">×</button>
+                    <img id="custom-product-image" alt="Product Image">
+                    <h2 id="custom-product-title">Product Title</h2>
+                    <label for="size">Select Size:</label>
+                    <select id="size">
+                        <option value="regular" class="size-regular">Regular</option>
+                        <option value="large" class="size-large">Large</option>
+                        <option value="jumbo" class="size-jumbo">Jumbo</option>
+                    </select>
+
+
+                    <div class="options-section" id="sauces">
+                        <h3>Select Sauces:</h3>
+                        <div class="options-grid">
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="Ketchup">
+                                <span class="option-name">Ketchup</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="Mayo">
+                                <span class="option-name">Mayo</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="BBQ">
+                                <span class="option-name">BBQ</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="Hot Chilli">
+                                <span class="option-name">Hot Chilli</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="Sweet Chilli">
+                                <span class="option-name">Sweet Chilli</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="Tomato">
+                                <span class="option-name">Tomato</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="Hommus">
+                                <span class="option-name">Hommus</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="Garlic">
+                                <span class="option-name">Garlic</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="Sour Cream">
+                                <span class="option-name">Sour Cream</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free" data-sauce-type="sauce">
+                                <input type="checkbox" name="sauce" value="Special Sauce">
+                                <span class="option-name">Special Sauce</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="options-section" id="milkshake-flavors">
+                        <h3>Select Flavor:</h3>
+                        <div class="options-grid">
+                            <label class="option-box">
+                                <input type="radio" name="flavor" value="Vanilla">
+                                <span class="option-name">Vanilla</span>
+                                <span class="option-price">Included</span>
+                            </label>
+                            <label class="option-box">
+                                <input type="radio" name="flavor" value="Chocolate">
+                                <span class="option-name">Chocolate</span>
+                                <span class="option-price">Included</span>
+                            </label>
+                            <label class="option-box">
+                                <input type="radio" name="flavor" value="Caramel">
+                                <span class="option-name">Caramel</span>
+                                <span class="option-price">Included</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="options-section" id="salads">
+                        <h3>Salads:</h3>
+                        <div class="options-grid">
+                            <label class="option-box free">
+                                <input type="checkbox" name="salad" value="Lettuce">
+                                <span class="option-name">Lettuce</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free">
+                                <input type="checkbox" name="salad" value="Tomato">
+                                <span class="option-name">Tomato</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                            <label class="option-box free">
+                                <input type="checkbox" name="salad" value="Onion">
+                                <span class="option-name">Onion</span>
+                                <span class="option-price">Free</span>
+                            </label>
+                        </div>
+                    
+
+                   
+
+                    <div class="options-section" id="extras">
+                        <h3>Extras:</h3>
+                        <div class="options-grid">
+                            <label class="option-box">
+                                <input type="checkbox" name="extra" value="Cheese">
+                                <span class="option-name">Cheese</span>
+                                <span class="option-price">$1.00</span>
+                            </label>
+                            <label class="option-box">
+                                <input type="checkbox" name="extra" value="Tabbouli">
+                                <span class="option-name">Tabbouli</span>
+                                <span class="option-price">$1.00</span>
+                            </label>
+                            <label class="option-box">
+                                <input type="checkbox" name="extra" value="Carrot">
+                                <span class="option-name">Carrot</span>
+                                <span class="option-price">$0.70</span>
+                            </label>
+                            <label class="option-box">
+                                <input type="checkbox" name="extra" value="Olive">
+                                <span class="option-name">Olive</span>
+                                <span class="option-price">$1.00</span>
+                            </label>
+                            <label class="option-box">
+                                <input type="checkbox" name="extra" value="Jelapeno">
+                                <span class="option-name">Jelapeno</span>
+                                <span class="option-price">$1.00</span>
+                            </label>
+                            <label class="option-box">
+                                <input type="checkbox" name="extra" value="Beetroot">
+                                <span class="option-name">Beetroot</span>
+                                <span class="option-price">$1.00</span>
+                            </label>
+                            <label class="option-box">
+                                <input type="checkbox" name="extra" value="Mushroom">
+                                <span class="option-name">Mushroom</span>
+                                <span class="option-price">$1.00</span>
+                            </label>
+                            <label class="option-box">
+                                <input type="checkbox" name="extra" value="Pineapple">
+                                <span class="option-name">Pineapple</span>
+                                <span class="option-price">$1.00</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    </div>
+                    <p>Total Price: <span id="total-price">$0.00</span></p>
+                    <div class="quantity-container">
+                        <button class="quantity-buttond" onclick="decreaseQuantity()">-</button>
+                        <input type="number" id="quantity" min="1" value="1">
+                        <button class="quantity-buttona" onclick="increaseQuantity()">+</button>
+                    </div>
+                    <div class="customization-buttons">
+                        <button class="cancel-button" onclick="closeCustomization()">Cancel</button>
+                        <button class="add-button" onclick="addToOrder()" id="orderActionButton">Add to Your Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Button -->
+    <div id="cart-icon" onclick="openCart() , goBack();">
+        <span id="cart-count">0</span>
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+
+    <!-- Cart Window -->
+    <div id="cart-window" class="hidden">
+        <div class="cart-container">
+            <h2>Your Order</h2>
+            <p id="cart-order-type"></p> <!-- Order type will be displayed here -->
+            <div id="points-redemption" class="points-redemption hidden">
+                <div class="points-info">
+                    <p>Available Points: <span id="available-points">0</span></p>
+                    <p>Redeemable Amount: $<span id="redeemable-amount">0.00</span></p>
+                </div>
+                <button id="redeem-points-btn" onclick="redeemPoints()" disabled>
+                    Redeem Points
+                </button>
+            </div>
+            <ul id="cart-list"></ul>
+            <button onclick="closeCart()">Close Cart</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Dialog -->
+    <div id="confirmation-dialog" class="confirmation-dialog hidden">
+        <h2>Are you sure you want to proceed to checkout?</h2>
+        <button onclick="confirmCheckout()">Yes, proceed</button>
+        <button onclick="closeCheckoutConfirmation()">Return to Cart</button>
+    </div>
+
+    <!-- Update Receipt Modal structure -->
+    <div id="receipt-modal" class="receipt-modal hidden">
+        <h2>Order Receipt</h2>
+        <div class="receipt-table-container">
+            <table id="receipt-table">
+                <!-- Receipt details will be dynamically injected here -->
+            </table>
+        </div>
+        <div class="receipt-buttons">
+            <button class="print-button" onclick="printReceipt()">Print Receipt</button>
+            <button class="close-button" onclick="closeReceipt()">Close</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Dialog for Closing Receipt -->
+    <div id="confirmation-close-receipt-dialog" class="confirmation-dialog hidden">
+        <h2>Are you sure you want to close the receipt and clear your cart?</h2>
+        <button onclick="confirmCloseReceipt()">Yes, close and clear</button>
+        <button onclick="cancelCloseReceipt()">Return to Receipt</button>
+    </div>
+
+    <!-- Order section -->
+    <div class="order-section">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="order-details">No items selected</span>
+
+    <div class="virtual-keyboard-wrapper hidden">
+        <div class="keyboard-header">
+            <span class="keyboard-title">Virtual Keyboard</span>
+            <button class="keyboard-close">&times;</button>
+        </div>
+</body>
+        <div class="simple-keyboard"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</body>
+</html>
+</html>

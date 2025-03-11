@@ -1,0 +1,501 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Arial', sans-serif;
+    cursor: default;
+}
+
+.auth-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px;
+    position: relative;
+}
+
+.auth-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+    display: block; /* Ensure container is always block */
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 100;
+}
+
+.auth-container.hidden {
+    display: none;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.auth-header p {
+    color: #666;
+    font-size: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 12px;
+    color: #aaa;
+}
+
+.input-with-icon input {
+    padding: 12px 12px 12px 40px;
+    width: 100%;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.input-with-icon input:focus {
+    border-color: #ffcc00;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.1);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 14px;
+    background: #ffcc00;
+    border: none;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.auth-button:hover {
+    background: #e6b800;
+    transform: translateY(-1px);
+}
+
+.auth-options {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.secondary-button, .guest-button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.secondary-button {
+    background: #fff;
+    border: 2px solid #ffcc00;
+    color: #333;
+}
+
+.guest-button {
+    background: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    color: #666;
+}
+
+.secondary-button:hover, .guest-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
+}
+
+.rewards-info {
+    position: absolute;
+    right: -320px;
+    top: 367px;
+    transform: translateY(-50%);
+    width: 300px;
+    background: white;
+    padding: 13px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+    z-index: 3000;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(30px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+}
+
+.rewards-features {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.reward-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #fff9e6;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.reward-item:hover {
+    transform: translateX(5px);
+}
+
+.reward-item i {
+    font-size: 24px;
+    color: #ffcc00;
+}
+
+.reward-item p {
+    margin: 0;
+    color: #333;
+}
+
+.slide-out {
+    transform: translateX(100%);
+    opacity: 0;
+    /* Remove display: none to allow animations */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Ensure register container is visible when sliding in */
+#register-container:not(.hidden) {
+    display: block;
+}
+
+/* Fix register container positioning and animation */
+#register-container {
+    position: fixed;
+    top: 41%;
+    left: 44%;
+    transform: translate(-50%, -50%) translateX(200%); /* Move further off screen */
+    width: 100%;
+    max-width: 400px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Prevent any interaction when hidden */
+    transition: all 0.3s ease-in-out;
+    z-index: -1; /* Place behind other elements when hidden */
+}
+
+#register-container.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Re-enable interactions */
+    z-index: 100; /* Bring to front when active */
+}
+
+#login-container {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animation classes */
+.slide-in {
+    animation: slideInForm 0.3s forwards;
+    display: block;
+}
+
+.slide-out {
+    animation: slideOutForm 0.3s forwards;
+}
+
+@keyframes slideInForm {
+    from {
+        transform: translate(-50%, -50%) translateX(200%);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes slideOutForm {
+    from {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        transform: translate(-50%, -50%) translateX(-200%);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Remove conflicting classes */
+.slide-out {
+    display: none;
+}
+
+.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-switch a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.points-balance {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-spinner.hidden {
+    display: none;
+}
+
+.loading-spinner:not(.hidden) {
+    display: flex;
+}
+
+.loading-spinner i {
+    font-size: 3rem;
+    color: #ffcc00;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-message, .success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    animation: slideIn 0.3s ease-out;
+    z-index: 1000;
+}
+
+.error-message {
+    background: #ff5252;
+    color: white;
+}
+
+.success-message {
+    background: #4caf50;
+    color: white;
+}
+
+.points-display {
+    background: #fff9e6;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+    border: 2px dashed #ffcc00;
+}
+
+.virtual-keyboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0; /* Ensure it spans the full width */
+    width: 100%;
+    background: #f0f0f0;
+    padding: 10px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+    display: none;
+    animation: slideUp 0.3s ease-out;
+    box-sizing: border-box; /* Include padding in width calculation */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    gap: 5px;
+    flex-wrap: wrap; /* Allow wrapping to fit within the frame */
+}
+
+.key {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    min-width: 40px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1 1 auto; /* Allow keys to resize and fit within the frame */
+    max-width: 60px; /* Set a maximum width for keys */
+}
+
+.key:hover {
+    background: #ffcc00;
+    transform: translateY(-2px);
+}
+
+.key:active {
+    transform: translateY(0);
+    background: #e6b800;
+}
+
+.key.special {
+    background: #e0e0e0;
+    min-width: 70px;
+    max-width: 100px; /* Set a maximum width for special keys */
+}
+
+.key.wide {
+    min-width: 120px;
+    max-width: 200px; /* Set a maximum width for wide keys */
+}
+
+.key.space {
+    min-width: 300px;
+    max-width: 400px; /* Set a maximum width for space key */
+}
+
+.keyboard-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Custom cursor styles */
+input, textarea {
+    cursor: text;
+}
+
+button, .auth-button, .secondary-button, .guest-button, .back-button, .key, .keyboard-close {
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Authentication - Kebab Shop</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <!-- Login Form -->
+        <div id="login-container" class="auth-container">
+            <div class="auth-header">
+                <h2><i class="fas fa-user-circle"></i> Welcome Back!</h2>
+                <p>Login to earn rewards with your order</p>
+            </div>
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" id="login-email" dir="ltr" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-password" required>
+                    </div>
+                </div>
+                <button type="submit" class="auth-button">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+            <div class="auth-options">
+                <button onclick="switchToRegister()" class="secondary-button">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+                <button onclick="continueAsGuest()" class="guest-button">
+                    <i class="fas fa-user-clock"></i> Continue as Guest
+                </button>
+            </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="register-container" class="auth-container">
+            <div class="auth-header">
+                <button class="back-button" onclick="switchToLogin()">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h2><i class="fas fa-user-plus"></i> Create Account</h2>
+                <p>Join our rewards program today!</p>
+            </div>
+            <form id="register-form" class="auth-form" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="register-firstname">First Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="register-firstname" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-lastname">Last Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="register-lastname" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" id="register-email" dir="ltr" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="register-password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Confirm Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                </div>
+                <button type="submit" class="auth-button">Create Account</button>
+            </form>
+        </div>
+
+        <!-- Rewards Information -->
+        <div id="rewards-info" class="rewards-info">
+            <div class="rewards-content">
+                <h3><i class="fas fa-gift"></i> Rewards Program</h3>
+                <div class="rewards-features">
+                    <div class="reward-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <p>Earn 1 point per $1 spent</p>
+                    </div>
+                    <div class="reward-item">
+                        <i class="fas fa-piggy-bank"></i>
+                        <p>100 points = $1 discount</p>
+                    </div>
+                    
+                    <div class="reward-item">
+                        <i class="fas fa-tag"></i>
+                        <p>Exclusive member offers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loading-spinner hidden">
+        <div class="spinner-content">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span>Please wait...</span>
+        </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="error-message" class="message error-message hidden">
+        <i class="fas fa-exclamation-circle"></i>
+        <span id="error-text"></span>
+    </div>
+
+    <div id="success-message" class="message success-message hidden">
+        <i class="fas fa-check-circle"></i>
+        <span id="success-text"></span>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

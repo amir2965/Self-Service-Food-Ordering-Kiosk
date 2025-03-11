@@ -1,0 +1,100 @@
+[
+  {
+    "orderNumber": 101,
+    "orderTime": "09/02/2025, 9:50:25 am",
+    "customerName": "Amir Sari",
+    "items": [
+      {
+        "category": "Kebabs",
+        "title": "Doner",
+        "size": "regular",
+        "drinkVolume": "",
+        "quantity": 2,
+        "price": "30.00",
+        "sauces": [
+          "Ketchup",
+          "Sweet Chilli",
+          "Sour Cream"
+        ],
+        "extras": [
+          "Cheese",
+          "Jelapeno"
+        ],
+        "salads": [
+          "Lettuce"
+        ],
+        "addOns": "2.50",
+        "extraa": "Extra A Info",
+        "extrab": "Extra B Info",
+        "extrac": "Extra C Info"
+      }
+    ],
+    "subtotal": "30.00",
+    "discount": "2.00",
+    "finalTotal": "28.00",
+    "status": "new",
+    "lastUpdated": "09/02/2025, 9:50:25 am"
+  },
+  {
+    "orderNumber": 101,
+    "orderTime": "26/02/2025, 9:44:13 pm",
+    "customerName": "Guest",
+    "items": [
+      {
+        "category": "Kebabs",
+        "title": "Doner",
+        "size": "regular",
+        "drinkVolume": "",
+        "quantity": 1,
+        "price": "15.50",
+        "sauces": [
+          "Ketchup"
+        ],
+        "extras": [
+          "Tabbouli",
+          "Beetroot",
+          "Mushroom"
+        ],
+        "salads": [
+          "Onion"
+        ],
+        "addOns": "3.00",
+        "extraa": "Extra A Info",
+        "extrab": "Extra B Info",
+        "extrac": "Extra C Info"
+      }
+    ],
+    "subtotal": "15.50",
+    "discount": "0.00",
+    "finalTotal": "15.50",
+    "status": "new",
+    "lastUpdated": "26/02/2025, 9:44:13 pm"
+  },
+  {
+    "orderNumber": 102,
+    "orderTime": "26/02/2025, 9:44:40 pm",
+    "customerName": "Guest",
+    "items": [
+      {
+        "category": "Drinks",
+        "title": "Coke",
+        "size": "375 mL",
+        "drinkVolume": "375 mL",
+        "quantity": 1,
+        "price": "1.50",
+        "sauces": [],
+        "extras": [],
+        "salads": [],
+        "addOns": "0.00",
+        "extraa": "Extra A Info",
+        "extrab": "Extra B Info",
+        "extrac": "Extra C Info"
+      }
+    ],
+    "subtotal": "1.50",
+    "discount": "0.00",
+    "finalTotal": "1.50",
+    "status": "new",
+    "lastUpdated": "26/02/2025, 9:44:40 pm"
+  }
+]

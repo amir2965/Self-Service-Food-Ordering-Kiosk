@@ -1,0 +1,2 @@
+when customer clicks reedeem points, change the title of Reedeem points into Restore points to gain back points and return total price into the orginal price before discount. When customer clicks Restore points button, the button should again get back into Redeem points button.
+
